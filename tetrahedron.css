@@ -23,6 +23,7 @@
     margin-left: -150px;
     background: transparent;
 
+    /* transform-origin: 50% 79.587585476806855% 86.60254037844386px; */
     animation-name: rotation;
     animation-timing-function: ease-in-out;
     transform-style: preserve-3d;
@@ -39,30 +40,23 @@
 #tetrahedron div {
     position: fixed;
     top: 0;
-    width: 0;
-    height: 0;
-    border-left: 150px solid transparent;
-    border-right: 150px solid transparent;
-    border-bottom: 259.8076211353315px solid #000000;
+    width: 100%;
+    height: 100%;
 
-    transition: border-bottom-color 1s 0.02s ease, transform 1s 0.02s ease;
-    -webkit-transition: border-bottom-color 1s 0.02s ease, transform 1s 0.02s ease;
-    -moz-transition: border-bottom-color 1s 0.02s ease, transform 1s 0.02s ease;
+    clip-path: polygon(50% 13.397459621556166%, 100% 100%, 0% 100%);
+    background:#000000;
+    opacity:0.8;
+    box-shadow:0 0 256px #444444 inset ;
 
-    /* transition: transform 1s 0.02s ease;
-    -webkit-transition: transform 1s 0.02s ease;
-    -moz-transition: transform 1s 0.02s ease; */
+    transition: background-color 1s 0.02s ease, transform 1s 0.02s ease;
+    -webkit-transition: background-color 1s 0.02s ease, transform 1s 0.02s ease;
+    -moz-transition: background-color 1s 0.02s ease, transform 1s 0.02s ease;
 
     user-select: none;
     -webkit-user-select: none;
     -moz-user-select: none;
     -webkit-tap-highlight-color: transparent;
     -moz-tap-highlight-color: transparent;
-
-    /* transform-style:preserve-3d;
-    perspective: 9000px; */
-
-    /* box-shadow:0 0 20vw #333 inset ; */
 
     --PI: 3.141592653589793rad;
     --halfPI: 1.5707963267948966rad;

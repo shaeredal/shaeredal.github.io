@@ -26,7 +26,7 @@ const setColor = (elements) => {
 
 const setTriangleColor = (elements) => {
     elements.forEach((el) => {
-        el.style.borderBottomColor = currentColorPair.color;
+        el.style.backgroundColor = currentColorPair.color;
     });
 };
 
@@ -56,39 +56,45 @@ const changeColor = (colorPair) => {
 
 const setHoverColorChange = (elements) => {
     elements.forEach((el) => {
-        el.onmouseover = () => {
+        el.addEventListener('mouseover', (event) => {
             el.style.color = currentColorPair.negative;
-        };
+            return event;
+        });
 
-        el.onmouseout = () => {
+        addEventListener('mouseout', (event) => {
             el.style.color = currentColorPair.color;
-        };
+            return event;
+        });
     });
 };
 
 const setTriangleHoverColorChange = (elements) => {
     elements.forEach((el) => {
-        el.onmouseover = () => {
-            el.style.borderBottomColor = currentColorPair.negative;
-        };
+        el.addEventListener('mouseover', (event) => {
+            el.style.backgroundColor = currentColorPair.negative;
+            return event;
+        });
 
-        el.onmouseout = () => {
-            el.style.borderBottomColor = currentColorPair.color;
-        };
+        addEventListener('mouseout', (event) => {
+            el.style.backgroundColor = currentColorPair.color;
+            return event;
+        });
     });
 };
 
 const setButtonHoverColorChange = (elements) => {
     elements.forEach((el) => {
-        el.onmouseover = () => {
+        el.addEventListener('mouseover', (event) => {
             el.style.borderColor = currentColorPair.negative;
             el.style.color = currentColorPair.negative;
-        };
+            return event;
+        });
     
-        el.onmouseout = () => {
+        addEventListener('mouseout', (event) => {
             el.style.borderColor = currentColorPair.color;
             el.style.color = currentColorPair.color;
-        };
+            return event;
+        });
     });
 };
 

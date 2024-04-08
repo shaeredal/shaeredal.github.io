@@ -5,6 +5,10 @@ import {
 	registerTargetHoverElements,
 	initializeColorChange,
 } from './colorChange/colorChange.js';
+import { 
+    registerTetrahedronParts,
+    registerTriggerHoverElements,
+} from './tetrahedron.js';
 
 const tetrahedronParts = document.querySelectorAll('#tetrahedron div');
 const socialLinks = document.querySelectorAll('#social a');
@@ -29,8 +33,17 @@ const initialize = () => {
     registerTargetTriangleElements(tetrahedronParts);
     registerTargetHoverElements(controls);
 	initializeColorChange();
+
+    registerTetrahedronParts(tetrahedronParts);
+    registerTriggerHoverElements(controls);
 }
 
 window.onload = () => {
     initialize();
+};
+
+window.onbeforeunload = () => {
+    tetrahedronParts.forEach((part) => {
+        part.classList.add('disassemble');
+    });
 };
